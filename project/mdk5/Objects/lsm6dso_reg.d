@@ -1,0 +1,10 @@
+.\objects\lsm6dso_reg.o: ..\..\app\lsm6dsow\lsm6dso_reg.c
+.\objects\lsm6dso_reg.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\lsm6dso_reg.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\lsm6dso_reg.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\lsm6dso_reg.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\lsm6dso_reg.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\lsm6dso_reg.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\lsm6dso_reg.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\lsm6dso_reg.o: ..\..\app\lsm6dsow\lsm6dso_reg.h
+.\objects\lsm6dso_reg.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h

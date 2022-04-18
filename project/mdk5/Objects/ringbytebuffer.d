@@ -1,0 +1,17 @@
+.\objects\ringbytebuffer.o: ..\..\app\icm_42607\common\Invn\EmbUtils\RingByteBuffer.c
+.\objects\ringbytebuffer.o: ..\..\app\icm_42607\common\Invn\EmbUtils\RingByteBuffer.h
+.\objects\ringbytebuffer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\ringbytebuffer.o: ..\..\app\icm_42607\common\Invn/InvBool.h
+.\objects\ringbytebuffer.o: ..\..\components\libraries\util\Nrf_assert.h
+.\objects\ringbytebuffer.o: ..\..\modules\nrfx\mdk\nrf.h
+.\objects\ringbytebuffer.o: ..\..\modules\nrfx\mdk\nrf52840.h
+.\objects\ringbytebuffer.o: C:\Users\admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\core_cm4.h
+.\objects\ringbytebuffer.o: C:\Users\admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_version.h
+.\objects\ringbytebuffer.o: C:\Users\admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_compiler.h
+.\objects\ringbytebuffer.o: C:\Users\admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\cmsis_armcc.h
+.\objects\ringbytebuffer.o: C:\Users\admin\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include\mpu_armv7.h
+.\objects\ringbytebuffer.o: ..\..\modules\nrfx\mdk\system_nrf52840.h
+.\objects\ringbytebuffer.o: ..\..\modules\nrfx\mdk\nrf52840_bitfields.h
+.\objects\ringbytebuffer.o: ..\..\modules\nrfx\mdk\nrf51_to_nrf52840.h
+.\objects\ringbytebuffer.o: ..\..\modules\nrfx\mdk\nrf52_to_nrf52840.h
+.\objects\ringbytebuffer.o: ..\..\modules\nrfx\mdk\compiler_abstraction.h

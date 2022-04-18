@@ -1,0 +1,9 @@
+.\objects\system_interface.o: ..\..\app\icm_42607\app\system_interface\system_interface.c
+.\objects\system_interface.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\system_interface.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\system_interface.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\system_interface.o: ..\..\app\icm_42607\app\system_interface\system_interface.h
+.\objects\system_interface.o: ..\..\app\icm_42607\drivers\imu/inv_imu_transport.h
+.\objects\system_interface.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\system_interface.o: ..\..\app\icm_42607\common\Invn/EmbUtils/Message.h
+.\objects\system_interface.o: ..\..\app\icm_42607\common\Invn/InvExport.h
