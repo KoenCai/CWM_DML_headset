@@ -347,7 +347,7 @@ int main(void)
     CWM_OS_dbgPrintf("dml version:%d.%d.%d.%d product:%d model:%d\n", scl.iData[1], scl.iData[2], scl.iData[3], scl.iData[4], scl.iData[5], scl.iData[6]);
 		
 
-#if 1
+#if 0
     memset(&scl, 0, sizeof(scl));
     scl.iData[0] = 1;
     scl.iData[1] = 4;

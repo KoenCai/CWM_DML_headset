@@ -440,12 +440,12 @@ ARM Macro Assembler    Page 7
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp.sp --apcs=
 interwork --depend=.\objects\arm_startup_nrf52840.d -o.\objects\arm_startup_nrf
-52840.o -I.\RTE\_IK-52840DK -IC:\Users\admin\AppData\Local\Arm\Packs\ARM\CMSIS\
-5.6.0\CMSIS\Core\Include -IC:\Users\admin\AppData\Local\Arm\Packs\NordicSemicon
-ductor\nRF_DeviceFamilyPack\8.35.0\Device\Include --predefine="__MICROLIB SETA 
-1" --predefine="__UVISION_VERSION SETA 536" --predefine="_RTE_ SETA 1" --predef
-ine="NRF52840_XXAA SETA 1" --predefine="_RTE_ SETA 1" --list=.\listings\arm_sta
-rtup_nrf52840.lst RTE\Device\nRF52840_xxAA\arm_startup_nrf52840.s
+52840.o -I.\RTE\_CWM_DML_headset -IC:\Users\admin\AppData\Local\Arm\Packs\ARM\C
+MSIS\5.6.0\CMSIS\Core\Include -IC:\Users\admin\AppData\Local\Arm\Packs\NordicSe
+miconductor\nRF_DeviceFamilyPack\8.35.0\Device\Include --predefine="__MICROLIB 
+SETA 1" --predefine="__UVISION_VERSION SETA 536" --predefine="_RTE_ SETA 1" --p
+redefine="NRF52840_XXAA SETA 1" --predefine="_RTE_ SETA 1" --list=.\listings\ar
+m_startup_nrf52840.lst RTE\Device\nRF52840_xxAA\arm_startup_nrf52840.s
 
 
 
