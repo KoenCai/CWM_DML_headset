@@ -674,14 +674,14 @@
           <GroupName>lib</GroupName>
           <Files>
             <File>
-              <FileName>CWM_LIB_Keil_m4.lib</FileName>
-              <FileType>4</FileType>
-              <FilePath>..\..\CWM_Release\Library\Lib\CWM_LIB_Keil_m4.lib</FilePath>
-            </File>
-            <File>
               <FileName>CWM_LIB_DML_Keil_m4.lib</FileName>
               <FileType>4</FileType>
               <FilePath>..\..\CWM_DML_LIB\Lib\CWM_LIB_DML_Keil_m4.lib</FilePath>
+            </File>
+            <File>
+              <FileName>CWM_LIB_Keil_m4.lib</FileName>
+              <FileType>4</FileType>
+              <FilePath>..\..\CWM_Release\Library\Lib\CWM_LIB_Keil_m4.lib</FilePath>
             </File>
           </Files>
         </Group>

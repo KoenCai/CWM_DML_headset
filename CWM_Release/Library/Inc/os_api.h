@@ -9,6 +9,8 @@ typedef struct{
     int (*i2cWrite)(uint16_t slaveAddr, uint16_t reg, int regLength, uint8_t *writeData, int writeDataSize, int busIndex);
     void *(*malloc)(int size);
     void (*free)(void* ptr);
+    int (*spiRead)(uint16_t reg, int regLength, uint8_t *readData, int readDataSize, int busIndex);
+    int (*spiWrite)(uint16_t reg, int regLength, uint8_t *writeData, int writeDataSize, int busIndex);
 } os_api;
 
 typedef os_api OsAPI;

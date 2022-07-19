@@ -200,22 +200,6 @@
         <Bp>
           <Number>3</Number>
           <Type>0</Type>
-          <LineNumber>373</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>82316</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>..\..\app\main.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression>\\nrf52840_qiaa\../../app/main.c\373</Expression>
-        </Bp>
-        <Bp>
-          <Number>4</Number>
-          <Type>0</Type>
           <LineNumber>286</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>0</Address>
@@ -974,8 +958,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\CWM_Release\Library\Lib\CWM_LIB_Keil_m4.lib</PathWithFileName>
-      <FilenameWithoutPath>CWM_LIB_Keil_m4.lib</FilenameWithoutPath>
+      <PathWithFileName>..\..\CWM_DML_LIB\Lib\CWM_LIB_DML_Keil_m4.lib</PathWithFileName>
+      <FilenameWithoutPath>CWM_LIB_DML_Keil_m4.lib</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -986,8 +970,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\..\CWM_DML_LIB\Lib\CWM_LIB_DML_Keil_m4.lib</PathWithFileName>
-      <FilenameWithoutPath>CWM_LIB_DML_Keil_m4.lib</FilenameWithoutPath>
+      <PathWithFileName>..\..\CWM_Release\Library\Lib\CWM_LIB_Keil_m4.lib</PathWithFileName>
+      <FilenameWithoutPath>CWM_LIB_Keil_m4.lib</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -995,7 +979,7 @@
 
   <Group>
     <GroupName>LSM6DSOW</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>

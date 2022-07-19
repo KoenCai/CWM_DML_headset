@@ -57,7 +57,7 @@ static void platform_init(void);
 
 
 SettingControl_t scl;	
-CustomSensorData csd ;
+
 
 float acc_in[3] = {0};
 float gyr_in[3] = {0};
@@ -209,9 +209,9 @@ void CWM_AP_SensorListen(pSensorEVT_t sensorEVT)
                 CWM_OS_dbgPrintf("SPV ok: acc_bias=%.4f, %.4f, %.4f gyr_bias=%.4f, %.4f, %.4f\n",
                                  f[4], f[5], f[6], f[7], f[8], f[9]);
 
-                m_gyr_bias[0] = f[7];
-                m_gyr_bias[1] = f[8];
-                m_gyr_bias[2] = f[9];
+//                m_gyr_bias[0] = f[7];
+//                m_gyr_bias[1] = f[8];
+//                m_gyr_bias[2] = f[9];
 						 
 //                SPIFlash_Erase_Sector(0);								
 //                f2u();
@@ -238,15 +238,23 @@ void CWM_AP_SensorListen(pSensorEVT_t sensorEVT)
 							;
     }
     break;
-
+		
+		case 1:
+						CWM_OS_dbgPrintf("TAG=DLOG2 G6(%d,%d,%d)\n",
+														 (int)(sensorEVT->fData[0] *10000),
+														 (int)(sensorEVT->fData[1] *10000),
+														 (int)(sensorEVT->fData[2] *10000));
+        
+    break;
+														 
     case 100:
-        if (nrf_gpio_pin_read(BUTTON_4) == 0)
-				{
+#if 1
             CWM_OS_dbgPrintf("orientation: yaw=%.3f, pitch=%.3f, row=%.3f\n",
                              sensorEVT->fData[0],
                              sensorEVT->fData[1],
                              sensorEVT->fData[2]);
-        }
+#endif
+        
         break;
 				
 
@@ -337,8 +345,9 @@ int main(void)
 		
 		
 		uint8_t whomi;
-		CWM_OS_i2cRead(0x6b,0x0f,1,&whomi,1,100);
-		CWM_OS_dbgPrintf("whomi = %d\r\n",whomi);
+		//CWM_OS_i2cRead(0x69,0x75,1,&whomi,1,100); 42607-c
+		CWM_OS_i2cRead(0x6B,0x0F,1,&whomi,1,100);
+		CWM_OS_dbgPrintf("whomi = %x\r\n",whomi);
 		
 		
 		memset(&scl, 0, sizeof(scl));
@@ -357,22 +366,36 @@ int main(void)
 		memset(&scl, 0, sizeof(scl));
     scl.iData[0] = 1;
     scl.iData[1] = 1;
-    scl.iData[2] = 9;
+    scl.iData[2] = 1+8;
     CWM_SettingControl(SCL_DML_DRV_HW_CONFIG, &scl);		
 
-		memset(&scl, 0, sizeof(scl));
+    memset(&scl, 0, sizeof(scl));
     scl.iData[0] = 1;
-    scl.iData[3] = 1;
-    scl.iData[4] = 2;
-    scl.iData[8] = 52;
-    CWM_SettingControl(SCL_DML_DRV_AG_CONFIG, &scl);		
+    scl.iData[3] = 2; // 1:poll 2:fifo
+    scl.iData[4] = 2; // 1:any 2:dt 3:custom
+    //scl.iData[5] = 20000; // custom_data_period (default: 0)
+    scl.iData[6] = 1; //fifo count
+    scl.iData[7] = 1; //axis
+    scl.iData[8] = 52; //odr (default: 50)
+    scl.iData[9] = 16; //acc range (default: 16)
+    scl.iData[10] = 2000; // gyro range (default: 2000)
+    scl.iData[11] = 0; // int1  1:data_ready 2:any_motion 4:watermark
+    scl.iData[12] = 0; // int2  1:data_ready 2:any_motion 4:watermark
+    CWM_SettingControl(SCL_DML_DRV_AG_CONFIG, &scl);	
+
+		memset(&scl, 0, sizeof(scl));
+		scl.iData[0] = 1;
+		scl.iData[1] = 4;  //32: DGD
+		//CWM_SettingControl(SCL_DML_DEBUG, &scl);      
+
 
     memset(&scl, 0, sizeof(scl));
     scl.iData[0] = 1;
     scl.iData[1] = 1;
-    CWM_SettingControl(SCL_DML_DRV_INIT, &scl); 
-		
+    CWM_SettingControl(SCL_DML_DRV_INIT, &scl); 		
 		CWM_OS_dbgPrintf("DML device=%d\n", scl.iData[2]);
+		
+		
 		
     memset(&scl, 0, sizeof(scl));
     scl.iData[0] = 1;
@@ -383,27 +406,46 @@ int main(void)
 		/* 打开log输出 */
     memset(&scl, 0, sizeof(scl));
     scl.iData[0] = 1;
-    scl.iData[3] = 3;
-    scl.iData[4] = 5;
+    scl.iData[3] = 7 + 8;
+    scl.iData[4] = 64 + 5;
+    scl.iData[5] = 3+16;
+    scl.iData[6] = -1 - 1 - 2 - 4 - 8 - 16 - 32 - 8192;
+    scl.iData[7] = -1;
     CWM_SettingControl(SCL_LOG, &scl);
 		
-//	  CWM_Sensor_Enable(CUSTOM_ACC);
-//    CWM_Sensor_Enable(CUSTOM_GYRO);						
+	/* 轴向 */
+    memset(&scl, 0, sizeof(scl));
+    scl.iData[0] = 1;
+    scl.iData[1] = 17; //轴向配置
+		//CWM_SettingControl(SCL_INPUT_SENSOR_CONFIG, &scl);					
 
 
     memset(&scl, 0, sizeof(scl));
     scl.iData[0] = 1;
-    scl.iData[2] = 4; //low speed 4dps	
-		scl.iData[9] = 30;
-//		CWM_SettingControl(SCL_HS_ORIEN_CONFIG, &scl);	
+    scl.iData[2] = -1; //low speed 4dps	
+		scl.iData[9] = 50;
+		//CWM_SettingControl(SCL_HS_ORIEN_CONFIG, &scl);	
+		
+		/* DT校正配置 */
+    memset(&scl, 0, sizeof(scl));
+    scl.iData[0] = 1;
+    scl.iData[1] = 1; 
+		CWM_SettingControl(SCL_INPUT_DT_CONFIG, &scl);	
 
-		CWM_Sensor_Enable(100);
+		//CWM_Sensor_Enable(100);
+		
+	  CWM_Sensor_Enable(102);
+		
+//			CustomSensorData csd;
+//			memset(&csd, 0, sizeof(csd));
+//			csd.sensorType = CUSTOM_OFFBODY_DETECT;	
+//			csd.fData[0] = 0; // 1：佩戴 
+//			CWM_CustomSensorInput(&csd);
 
   while(1)
   {		
 
-			CWM_Dml_process();
-				
+			CWM_Dml_process();				
   }
 }
 	
